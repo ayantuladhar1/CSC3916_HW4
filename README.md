@@ -18,37 +18,63 @@ Leverage the Async.js library or mongo $lookup aggregation capability to join th
 Requirements
 
 • Create a collection in MongoDB (Mongo Atlas) to hold reviews about existing movies.
+
 o A review contains the name of the reviewer, a small quote about what they thought
 about the movie, and their rating out of five stars.
-o The review collection should have at least one review for each movie. – The review
-can be a simple, fictitious review that you create.
+
+o The review collection should have at least one review for each movie. 
+– The review can be a simple, fictitious review that you create.
+
 • This API should build upon the previous proxy in assignment three.
+
 o If the user sends a response with the query parameter reviews=true, then the
 response should include the movie information as well as all the reviews for the
-movie. If they do not pass this in, the response should not show the reviews. – The
-review information should be appended to the response to the user.
+movie. If they do not pass this in, the response should not show the reviews.
+– The review information should be appended to the response to the user.
+
 § Hint: Look at $lookup on how to aggregate two collections
+
 o Implement GET/POST (DELETE is optional for reviews)
+
 § POST needs to be secured with a JWT authorization token. The Username
 in the token should be stored with the review (indicating the user that
 submitted the review)
+
 • Extra Credit: Add custom analytics to return information about which movies users are
 querying.
+
 o Create a custom analytics policy that describes the number of times each movie has
 been reviewed. To do this, you will have to send a number of requests for each movie.
+
 § Custom Dimension: Movie Name
+
 § Custom Metric: Requested: Value 1 (it will aggregate)
+
 o Custom Dimension and Metric should be sent with an Event type
+
 § Event Category: Genre of Movie (e.g. Western)
+
 § Event Action: Url Path (e.g. post /reviews)
+
 § Event Label: API Request for Movie Review
+
 § Event Value: 1
+
 Acceptance Criteria
+
 • Create a Postman test to test your API. You should include the following requests.
+
 • All tests from HW3 and
+
 o Valid request without the review query parameter.
+
 o Invalid request (for a movie not in the database) without the review query parameter.
+
 o Valid request with the review query parameter.
+
 o Valid save review method that associates a review with a movie
+
 o Invalid save review (movie missing from DB)
+
 o Export a report from Google Analytics
+
