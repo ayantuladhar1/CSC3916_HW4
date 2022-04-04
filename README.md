@@ -81,7 +81,12 @@ o Export a report from Google Analytics
 Resources
 
 • https://github.com/daxko/universal-ga
+
 • https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dimsmets
+
 • https://cloud.google.com/appengine/docs/flexible/nodejs/integrating-with-analytics
+
 • https://caolan.github.io/async/index.html
+
 • https://support.google.com/analytics/answer/2709829
+
